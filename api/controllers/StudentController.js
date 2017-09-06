@@ -1,18 +1,18 @@
 /**
- * RecipeController
+ * StudentController
  *
- * @description :: Server-side logic for managing recipes
+ * @description :: Server-side logic for managing students
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
 var Client = require('node-rest-client').Client;
 var client = new Client();
-var endpoint = "https://evening-lake-62189.herokuapp.com/recipe"
+var endpoint = "http://localhost:1337/student"
 
 module.exports = {
 
   /**
-   * `RecipeController.create()`
+   * `StudentController.create()`
    */
   create: function (req, res) {
 
@@ -41,30 +41,30 @@ module.exports = {
 
 
   /**
-   * `RecipeController.read()`
+   * `StudentController.read()`
    */
   read: function (req, res) {
 
     client.get(endpoint, function (data, response) {
-        return res.view('read', {recipes: data});
+        return res.view('read', {students: data});
     }).on('error', function (err) {
-        return res.view('read', {error: { message: "There was an error getting the recipes"}});
+        return res.view('read', {error: { message: "There was an error getting the students"}});
     });
 
   },
 
 
    /**
-   * `RecipeController.update()`
+   * `StudentController.update()`
    */
   update: function (req, res) {
 
     if(req.method != "POST"){
 
       client.get(endpoint, function (data, response) {
-        return res.view('update', {recipes: data});
+        return res.view('update', {students: data});
       }).on('error', function (err) {
-          return res.view('update', {error: { message: "There was an error getting the recipes"}});
+          return res.view('update', {error: { message: "There was an error getting the students"}});
       });
 
     }else{
@@ -74,7 +74,7 @@ module.exports = {
           headers: { "Content-Type": "application/json" }
       };
 
-      client.put(endpoint + "/" + req.body.recipe_id, args, function (data, response) {
+      client.put(endpoint + "/" + req.body.student_id, args, function (data, response) {
 
         if(response.statusCode != "200"){
             req.addFlash("error", data.message);
@@ -90,21 +90,21 @@ module.exports = {
   },
 
   /**
-   * `RecipeController.delete()`
+   * `StudentController.delete()`
    */
   delete: function (req, res) {
 
     if(req.method != "POST"){
 
       client.get(endpoint, function (data, response) {
-        return res.view('delete', {recipes: data});
+        return res.view('delete', {students: data});
       }).on('error', function (err) {
-          return res.view('delete', {error: { message: "There was an error getting the recipes"}});
+          return res.view('delete', {error: { message: "There was an error getting the students"}});
       });
 
     }else{
 
-      client.delete(endpoint + "/" + req.body.recipe_id, function (data, response) {
+      client.delete(endpoint + "/" + req.body.student_id, function (data, response) {
 
         if(response.statusCode != "200"){
             req.addFlash("error", data.message);

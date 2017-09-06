@@ -34,12 +34,23 @@
 
    $(function(){
 
-   	//code goes here
-    let addRecipe = {
-      title: "Chile",
-      description: "Tasty and spicy chili made with beef and beans - perfect for dinner!",
-      
-    }
+   //  $(".displayButton").click(function(){
+   //    currentRecipe = $(this).data("recipeid");
+   //    console.log(currentRecipe);
+   //    //$("p").toggleClass();
+   //  })
+
+    //this toggles all p's to display, not the ones within this one recipe
+    //    //$("p").toggleClass();
+
+
+
+   // 	//code goes here
+    // let addRecipe = {
+    //   title: "Chile",
+    //   description: "Tasty and spicy chili made with beef and beans - perfect for dinner!",
+    //
+    // }
   //   let table = $('#studentTable').DataTable({
   //         buttons: [
   //             'copy', 'excel', 'pdf', 'csv','print'
