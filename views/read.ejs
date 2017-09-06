@@ -12,26 +12,26 @@
     <div class="flex-row row" id="recipecard">
         <% if(typeof recipes != "undefined" && recipes.length > 0){ %>
           <% recipes.forEach(function(recipe){ %>
-      <div class="col-xs-6 col-sm-4 col-lg-3">
-        <div class="thumbnail">
-          <div class="caption">
-            <h3><%= recipe.title %></h2>
-            <p><button data-recipeid="<%= recipe.id %>" class="btn btn-danger displayButton" href="#">DISPLAY</button></p>
-            <div data-recipeid="<%= recipe.id %>" class="hidden">
-            <p id="<%= recipe.id %>" class="flex-text text-muted"><b>Description:</b><%= recipe.description %>
-            </p>
-            <p id="<%= recipe.id %>" class="flex-text text-muted"><b>Number of Minutes:</b><%= recipe.numberOfMinutes %>
-            </p>
-            <p id="<%= recipe.id %>" class="flex-text text-muted"><b>Ingredients:</b><%= recipe.ingredients %>
-            </p>
-            <p id="<%= recipe.id %>"class="flex-text text-muted"><b>Instructions:</b><%= recipe.instructions %>
-            </p>
-            </div>
-          </div>
-          <!-- /.caption -->
-        </div>
-        <!-- /.thumbnail -->
-      </div>
+              <div class="col-xs-6 col-sm-4 col-lg-3">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <h3><%= recipe.title %></h2>
+                    <p><button data-target-id="<%= recipe.id %>" class="btn btn-danger displayButton" href="#">DISPLAY</button></p>
+                    <div class="recipedialog" style="display: none" data-recipe-id="<%= recipe.id %>">
+                      <p class="flex-text text-muted"><b>Description:</b><%= recipe.description %>
+                      </p>
+                      <p class="flex-text text-muted"><b>Number of Minutes:</b><%= recipe.numberOfMinutes %>
+                      </p>
+                      <p class="flex-text text-muted"><b>Ingredients:</b><%= recipe.ingredients %>
+                      </p>
+                      <p class="flex-text text-muted"><b>Instructions:</b><%= recipe.instructions %>
+                      </p>
+                    </div>
+                  </div>
+                  <!-- /.caption -->
+                </div>
+                <!-- /.thumbnail -->
+              </div>
       <% }) %>
     <% } %>
     </div>

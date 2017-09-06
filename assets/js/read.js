@@ -34,14 +34,21 @@
 
    $(function(){
 
-   //  $(".displayButton").click(function(){
-   //    currentRecipe = $(this).data("recipeid");
-   //    console.log(currentRecipe);
-   //    //$("p").toggleClass();
-   //  })
+     $(".displayButton").click(function(event){
+       const id = $(this).data("target-id");
+       $(".recipedialog").hide()
+       $(`[data-recipe-id=${id}]`).toggle();
 
-    //this toggles all p's to display, not the ones within this one recipe
-    //    //$("p").toggleClass();
+     })
+
+    // $("button").click(function(){
+    //   console.log($(this).parent())
+    //   $(this).parent().toggleClass()
+    //   //$("p").toggleClass();
+    // })
+    //
+    // //this toggles all p's to display, not the ones within this one recipe
+    // //    //$("p").toggleClass();
 
 
 
