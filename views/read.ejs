@@ -1,0 +1,69 @@
+<ol class="breadcrumb">
+    <li class="active">Home</a></li>
+</ol>
+
+<br/>
+
+<%- partial ('partials/statusmessage.ejs') %>
+
+<h2>Recipes</h2>
+<div class="container">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        General FAQ’s
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <h5>What’s driving this effort?</h5>
+                    <p>Competitive pressure and changing customer preferences continues to spark our thinking – driving new ways to look at what we do, how we do it and how to do it faster. We believe that the more we strengthen and connect associate performance to business success, the more success we will all share.</p>
+                    <h5>What's changing?</h5>
+                    <p>We are making changes to our talent management processes and compensation design, in order to drive higher individual and company performance. We are:</p>
+                    <ul>
+                    	<li>Enhancing our tools and capabilities to enable us to better differentiate associate performance and rewards</li>
+                    	<li>Creating a more balanced approach to incent short and long-term results, behaviors and decision-making</li>
+                    	<li>Enabling a stronger coaching environment focused on developing our talent today and tomorrow</li>
+                    	<li>Designing pay and performance practices to help ensure we get and keep the best talent</li>
+                    </ul>
+                    <h5>Who will be affected by these compensation and talent management?</h5>
+                    <p>Compensation changes will affect officers who are part of U.S. Payroll on February 4, FY18. Changes to our talent management processes will affect all officers in FY18.  In addition, changes to our goal setting and feedback processes will apply to associates who report directly to officers.</p>
+                    <h5>See full list of <a href="default.ashx?CLASSNAME=RESOURCEHANDLER&amp;ID=%2509p%25e0%250652%25f6%255d%25b3%25a6%257d%2540%25b5%2509l%25bc" target="_blank">General FAQ’s (PDF) </a></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <table class="table table-striped table-bordered" id="studentTable" style="width:100%">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Start Date</th>
+      <th>GPA</th>
+      <th>SAT Score</th>
+      <th>Major ID</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% if(typeof students != "undefined" && students.length > 0){ %>
+    <% students.forEach(function(student){ %>
+      <tr>
+        <td><%= student.student_id %></td>
+        <td><%= student.first_name %></td>
+        <td><%= student.last_name %></td>
+        <td><%= student.start_date %></td>
+        <td><%= student.gpa %></td>
+        <td><%= student.sat %></td>
+        <td><%= student.major_id %></td>
+      </tr>
+    <% }) %>
+  <% } %>
+  </tbody>
+</table> -->
