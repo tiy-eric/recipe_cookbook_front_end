@@ -7,7 +7,7 @@
 
 var Client = require('node-rest-client').Client;
 var client = new Client();
-var endpoint = "https://evening-lake-62189.herokuapp.com/recipe"
+var endpoint = "https://evening-lake-62189.herokuapp.com/recipes"
 
 module.exports = {
 

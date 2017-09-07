@@ -7,7 +7,6 @@
 <%- partial ('partials/statusmessage.ejs') %>
 
 <h2>Recipes</h2>
-
 <div class="container">
     <div class="flex-row row" id="recipecard">
         <% if(typeof recipes != "undefined" && recipes.length > 0){ %>
@@ -22,15 +21,24 @@
                       </p>
                       <p class="flex-text text-muted"><b>Number of Minutes:</b><%= recipe.numberOfMinutes %>
                       </p>
-                      <p class="flex-text text-muted"><b>Ingredients:</b><%= recipe.ingredients %>
+                       <p class="flex-text text-muted"><b>Ingredients:</b>
+                          <ol>
+                            <% if(typeof recipes != "undefined" && recipes.ingredients.length > 0){ %>
+                                <% for(var i=0; i<recipes.ingredients.length; i++) { %>
+                                      <li>
+                                          <%= recipes.ingredients.ingredient %>
+                                      </li>
+                                <% } %>
+                              <% } %>
+                          </ol>
                       </p>
                       <p class="flex-text text-muted"><b>Instructions:</b><%= recipe.instructions %>
                       </p>
                     </div>
                   </div>
-                  <!-- /.caption -->
+
                 </div>
-                <!-- /.thumbnail -->
+
               </div>
       <% }) %>
     <% } %>
