@@ -23,10 +23,19 @@
                       </p>
                        <p class="flex-text text-muted"><b>Ingredients:</b>
                           <ol>
+                          <!-- 
+                          you dont need line 27 line because your already looping through recipies which started on line 13
+                          That also means the matching brace on line 36 is a not needed either.
+                          -->
                             <% if(typeof recipes != "undefined" && recipes.ingredients.length > 0){ %>
-                                <% for(var i=0; i<recipes.ingredients.length; i++) { %>
+                            <!-- 
+                          Here we are working with individual recipies refered to as recipe. You are using that all over the place.
+                          like line 17 and 22. Here we need to do the same thing. We need to loop over the ingredients for the "recipie" we are on
+                          I updated to code below to reflect what it should look like
+                          -->
+                                <% for(var i=0; i<recipe.ingredients.length; i++) { %>
                                       <li>
-                                          <%= recipes.ingredients.ingredient %>
+                                          <%= recipe.ingredients[i].whateverproperty %>
                                       </li>
                                 <% } %>
                               <% } %>
